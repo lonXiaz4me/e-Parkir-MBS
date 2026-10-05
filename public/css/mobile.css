@@ -1,0 +1,762 @@
+/* ============================================================
+   mobile.css — All mobile responsive styles for MBS e-Parkir
+   Breakpoint: 768px and below
+   Load this LAST on every page, after all other stylesheets.
+
+   Usage (add to every blade file):
+   <link rel="stylesheet" href="{{ asset('css/mobile.css') }}">
+   ============================================================ */
+
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE HEADER  (visible only on ≤768px)
+   Defined here so it exists even before the media query —
+   hidden by default on desktop via display:none.
+═══════════════════════════════════════════════════════════ */
+.mobile-header {
+    display: none;
+}
+
+.mobile-bottom-nav {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+
+/* ─────────────────────────────────────────────────────────
+   BASE FONT SIZE — 16px minimum on mobile
+   The desktop UI uses many 10–13px values which are too
+   small to read on a phone. We set the html/body base to
+   16px and then override the most common small-text classes
+   so nothing falls below a comfortable reading size.
+───────────────────────────────────────────────────────── */
+
+    html {
+        font-size: 16px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    /* ── General content text ── */
+    p, li, span, div, label, input, select, textarea, button {
+        font-size: inherit;
+    }
+
+    /* ── Form fields ── */
+    .f-label        { font-size: 11px; }
+    .f-input        { font-size: 16px; } /* 16px prevents iOS zoom-on-focus */
+    .f-hint         { font-size: 13px; }
+    .f-error-msg    { font-size: 13px; }
+    .error-text     { font-size: 13px; }
+
+    /* ── Auth pages ── */
+    .login-sub, .reg-sub { font-size: 14px; }
+
+    /* ── Notification panel ── */
+    .np-tab         { font-size: 12px; }
+    .np-read-all    { font-size: 12px; }
+    .notif-title    { font-size: 13px; }
+    .notif-msg      { font-size: 12px; }
+    .notif-time     { font-size: 11px; }
+    .np-empty p     { font-size: 13px; }
+    .np-footer a    { font-size: 12px; }
+
+    /* ── Dashboard stat cards ── */
+    .stat-num  { font-size: 20px; }
+    .stat-lbl  { font-size: 13px; }
+
+    /* ── App cards ── */
+    .app-id    { font-size: 11px; }
+    .app-type  { font-size: 16px; }
+    .sbadge    { font-size: 11px; }
+    .card-meta { font-size: 13px; }
+    .ps        { font-size: 11px; }
+    .act       { font-size: 13px; }
+
+    /* ── Detail panel ── */
+    .dp-id            { font-size: 11px; }
+    .dp-title         { font-size: 16px; }
+    .dp-section-label { font-size: 11px; }
+    .tl-stage         { font-size: 14px; }
+    .tl-date          { font-size: 12px; }
+    .tl-note          { font-size: 13px; }
+    .info-key         { font-size: 13px; }
+    .info-val         { font-size: 14px; }
+    .check-item       { font-size: 13px; }
+    .dp-btn           { font-size: 13px; }
+
+    /* ── Application form ── */
+    .form-card-title  { font-size: 15px; }
+    .page-title       { font-size: 18px; }
+    .page-sub         { font-size: 14px; }
+    .info-text        { font-size: 13px; }
+    .decl-text        { font-size: 14px; }
+    .upload-file-title{ font-size: 14px; }
+    .upload-file-sub  { font-size: 12px; }
+    .upload-cam-title { font-size: 14px; }
+    .upload-cam-sub   { font-size: 12px; }
+    .upload-file-btn  { font-size: 13px; }
+    .upload-cam-btn   { font-size: 13px; }
+    .upload-preview-badge { font-size: 12px; }
+    .upload-preview-name  { font-size: 13px; }
+    .btn-ghost, .btn-draft, .btn-submit { font-size: 14px; }
+
+    /* ── Payment page ── */
+    .bil-ref          { font-size: 11px; }
+    .bil-title        { font-size: 16px; }
+    .bil-loc          { font-size: 13px; }
+    .bil-amount       { font-size: 26px; }
+    .bil-amount-label { font-size: 11px; }
+    .br-row           { font-size: 14px; }
+    .section-label    { font-size: 11px; }
+    .method-name      { font-size: 13px; }
+    .method-desc      { font-size: 12px; }
+    .bank-selector    { font-size: 16px; } /* prevents iOS zoom */
+    .btn-pay          { font-size: 15px; }
+    .secure-note      { font-size: 12px; }
+    .past-ref         { font-size: 11px; }
+    .past-type        { font-size: 14px; }
+    .past-date        { font-size: 12px; }
+    .past-amount      { font-size: 15px; }
+    .past-badge       { font-size: 12px; }
+    .btn-resit        { font-size: 12px; }
+    .sm-num           { font-size: 20px; }
+    .sm-lbl           { font-size: 12px; }
+    .sp-key, .sp-val  { font-size: 13px; }
+    .sp-total-key     { font-size: 14px; }
+    .sp-total-val     { font-size: 22px; }
+
+    /* ── Mobile bottom nav ── */
+    .mob-nav-label { font-size: 11px; }
+
+    /* ── Breadcrumb & topbar ── */
+    .breadcrumb { font-size: 13px; }
+
+    /* ── Alert / info strips ── */
+    .alert-text   { font-size: 13px; }
+    .error-alert  { font-size: 13px; }
+    .alert-success{ font-size: 13px; }
+
+    /* ── Payment summary on application form ── */
+    .payment-row .label  { font-size: 13px; }
+    .payment-row .value  { font-size: 14px; }
+    .payment-total .label{ font-size: 14px; }
+    .payment-total .value{ font-size: 16px; }
+    .payment-note        { font-size: 12px; }
+    .payment-empty-text  { font-size: 13px; }
+
+/* ─────────────────────────────────────────────────────────
+   SHELL & SIDEBAR
+───────────────────────────────────────────────────────── */
+
+    /* Single-column shell */
+    .shell {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+        min-height: 100dvh;
+    }
+
+    /* Hide desktop sidebar */
+    .sidebar {
+        display: none;
+    }
+
+    /* Hide desktop topbar — replaced by mobile header */
+    .topbar {
+        display: none !important;
+    }
+
+    /* Main content: pad for fixed header (56px) + bottom nav (60px).
+       min-height fills leftover viewport so the warm background never
+       cuts short when content is shorter than the screen. */
+    .main {
+        padding: 16px 14px 76px;
+        overflow-y: auto;
+        min-height: calc(100dvh - 56px);
+        box-sizing: border-box;
+    }
+
+
+/* ─────────────────────────────────────────────────────────
+   MOBILE HEADER
+───────────────────────────────────────────────────────── */
+
+    .mobile-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--color-panel-dark);
+        padding: 0 16px;
+        height: 56px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-bottom: 1px solid var(--color-border-dark);
+        grid-column: 1;
+    }
+
+    .mobile-header-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .mobile-header-logo {
+        width: 34px;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .mobile-header-logo img {
+        width: 34px;
+        height: 34px;
+        object-fit: contain;
+    }
+
+    .mobile-header-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.25;
+    }
+
+    .mobile-header-name {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--color-yellow);
+        letter-spacing: 0.01em;
+    }
+
+    .mobile-header-sub {
+        font-size: 9px;
+        color: var(--color-text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        margin-top: 1px;
+    }
+
+    .mobile-header-right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+    }
+
+    /* Bell inside mobile header */
+    .mobile-header-right .bell-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: var(--radius-md);
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .mobile-header-right .bell-btn svg {
+        width: 16px;
+        height: 16px;
+        stroke: #ccc;
+        fill: none;
+        stroke-width: 1.6;
+    }
+
+    .mobile-header-right .bell-dot {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        width: 7px;
+        height: 7px;
+        background: var(--color-red);
+        border-radius: 50%;
+        border: 1.5px solid var(--color-panel-dark);
+        display: none;
+    }
+
+    /* Notification panel — full width on mobile */
+    .mobile-header-right .notif-panel {
+        position: fixed;
+        top: 56px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+        z-index: 200;
+    }
+
+
+/* ─────────────────────────────────────────────────────────
+   MOBILE BOTTOM NAV
+───────────────────────────────────────────────────────── */
+
+    .mobile-bottom-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background: var(--color-panel-dark);
+        border-top: 1px solid var(--color-border-dark);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        z-index: 100;
+        padding: 0 4px;
+    }
+
+    .mob-nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        flex: 1;
+        height: 100%;
+        text-decoration: none;
+        color: var(--color-text-muted);
+        cursor: pointer;
+        position: relative;
+        transition: color 0.15s;
+        border: none;
+        background: none;
+        font-family: var(--font-ui);
+        padding: 0;
+    }
+
+    .mob-nav-item.active {
+        color: var(--color-yellow);
+    }
+
+    /* Active top-line indicator */
+    .mob-nav-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 32px;
+        height: 2px;
+        background: var(--color-yellow);
+        border-radius: 0 0 2px 2px;
+        opacity: 0;
+        transition: opacity 0.15s;
+    }
+
+    .mob-nav-item.active::before {
+        opacity: 1;
+    }
+
+    .mob-nav-icon {
+        width: 22px;
+        height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .mob-nav-icon svg {
+        width: 20px;
+        height: 20px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.6;
+    }
+
+    /* Unread badge on nav icon */
+    .mob-nav-badge {
+        position: absolute;
+        top: -4px;
+        right: -6px;
+        background: var(--color-red);
+        color: #fff;
+        font-size: 9px;
+        font-weight: 700;
+        min-width: 16px;
+        height: 16px;
+        border-radius: 8px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 0 3px;
+        border: 1.5px solid var(--color-panel-dark);
+    }
+
+    .mob-nav-badge.visible {
+        display: flex;
+    }
+
+    .mob-nav-label {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        line-height: 1;
+    }
+
+    /* Log Keluar — red tint */
+    .mob-nav-logout {
+        color: #c0392b;
+    }
+
+    .mob-nav-logout .mob-nav-icon svg {
+        stroke: #c0392b;
+    }
+
+    .mob-nav-logout:hover {
+        color: #96281b;
+    }
+
+    .mob-nav-logout::before {
+        background: #c0392b;
+    }
+
+
+/* ─────────────────────────────────────────────────────────
+   AUTH PAGES (login / register / forgot-password)
+───────────────────────────────────────────────────────── */
+
+    body {
+        font-size: 16px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        min-height: 100dvh;
+    }
+
+    /* Shell: single column, full screen */
+    .login-shell {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        min-height: 100dvh;
+        border-radius: 0;
+        box-shadow: none;
+        width: 100%;
+    }
+
+    /* Left panel → compact dark header strip */
+    .left-panel {
+        padding: 20px 20px 16px;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        overflow: hidden;
+    }
+
+    /* Hide decorative content, keep only brand row */
+    .hero-title,
+    .hero-desc,
+    .feature-list,
+    .left-footer {
+        display: none;
+    }
+
+    .brand-row {
+        margin-bottom: 0;
+        flex: 1;
+    }
+
+    .brand-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-logo img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .brand-txt .b-name {
+        font-size: 12px;
+    }
+
+    /* Right panel → scrollable main content */
+    .right-panel {
+        padding: 28px 20px 40px;
+        justify-content: flex-start;
+        overflow-y: auto;
+    }
+
+    .login-title,
+    .reg-title {
+        font-size: 20px;
+    }
+
+    .login-sub,
+    .reg-sub {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    /* SSO buttons: compact */
+    .sso-block {
+        padding: 14px;
+        margin-bottom: 18px;
+    }
+
+    .sso-btn {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    /* Hide fine-print SSO label */
+    .sso-btn span[style] {
+        display: none;
+    }
+
+    .divider {
+        margin-bottom: 16px;
+    }
+
+    .otp-text {
+        font-size: 10px;
+    }
+
+    /* Register: single-column form grid */
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .full-width {
+        grid-column: span 1;
+    }
+
+    /* OTP input */
+    .otp-input {
+        font-size: 22px;
+        letter-spacing: 12px;
+        padding: 12px;
+    }
+
+
+/* ─────────────────────────────────────────────────────────
+   DASHBOARD
+───────────────────────────────────────────────────────── */
+
+    /* Stat cards: 2×2 */
+    .stat-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    /* Toolbar */
+    .toolbar {
+        gap: 5px;
+    }
+
+    .search-wrap {
+        max-width: 100%;
+        flex: 1 1 100%;
+        order: -1;
+    }
+
+    .filter-btn {
+        font-size: 10px;
+        padding: 4px 7px;
+    }
+
+    .sort-wrap {
+        margin-left: auto;
+    }
+
+    /* Arrow-only sort buttons — sit on the same row as the filter pills */
+    .sort-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+
+    .sort-label {
+        display: none;
+    }
+
+    .sort-arrow {
+        font-size: 13px;
+        line-height: 1;
+    }
+
+    .btn-new {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+        order: 99;
+        padding: 9px 16px;
+    }
+
+    /* Split layout: single column */
+    .split {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .detail-panel {
+        position: static;
+    }
+
+    /* App card action buttons */
+    .card-foot {
+        flex-wrap: wrap;
+    }
+
+    .card-foot .act {
+        flex: 1;
+        text-align: center;
+        padding: 6px 10px;
+    }
+
+
+/* ─────────────────────────────────────────────────────────
+   APPLICATION FORM
+───────────────────────────────────────────────────────── */
+
+    /* Step bar: numbers only */
+    .step-bar {
+        padding: 10px 12px;
+        gap: 0;
+    }
+
+    .step-label {
+        display: none;
+    }
+
+    .step-num {
+        width: 28px;
+        height: 28px;
+    }
+
+    .step:not(:last-child)::after {
+        width: 80%;
+    }
+
+    /* Form grid: single column */
+    .form-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .form-field.full {
+        grid-column: 1;
+    }
+
+    .form-card-body {
+        padding: 14px;
+    }
+
+    .form-card-header {
+        padding: 12px 14px;
+    }
+
+    /* Action bar: stack vertically */
+    .action-bar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 14px;
+    }
+
+    .action-right {
+        width: 100%;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btn-ghost,
+    .btn-draft,
+    .btn-submit {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* Payment summary */
+    .payment-summary {
+        padding: 12px 14px;
+    }
+
+    /* Upload preview */
+    .upload-preview-img-wrap img {
+        height: 160px;
+    }
+
+    /* Draft banner */
+    .draft-banner {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .draft-banner-clear {
+        width: 100%;
+        text-align: center;
+    }
+
+
+/* ─────────────────────────────────────────────────────────
+   PAYMENT PAGE
+───────────────────────────────────────────────────────── */
+
+    /* Two-column grid → single column */
+    .pay-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .summary-panel {
+        position: static;
+    }
+
+    /* Bill header: stack vertically */
+    .bil-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .bil-amount-wrap {
+        text-align: left;
+    }
+
+    .bil-amount {
+        font-size: 22px;
+    }
+
+    /* Payment method */
+    .method-name { font-size: 10px; }
+    .method-desc { font-size: 9px; }
+
+    /* Past payment cards */
+    .past-card {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .past-actions {
+        width: 100%;
+        justify-content: flex-end;
+        padding-top: 6px;
+        border-top: 0.5px solid var(--color-border-panel);
+    }
+
+    /* Breakdown rows */
+    .br-row {
+        flex-wrap: wrap;
+        gap: 2px;
+    }
+
+    .br-row span:first-child {
+        color: var(--color-text-muted);
+        flex: 1 1 100%;
+    }
+
+    .br-row .br-val {
+        font-weight: 600;
+    }
+
+} /* end @media (max-width: 768px) */

@@ -1,0 +1,322 @@
+/* ============================================================
+   auth.css — Shared styles for all auth pages (MBS e-Parkir)
+   Used by: welcome.blade.php, register.blade.php, email-otp.blade.php
+   Requires: tokens.css
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap');
+
+/* ── Reset ── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── Body ── */
+body {
+    font-family: var(--font-ui);
+    background: var(--color-dark-bg);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── Shell (two-column card) ── */
+.login-shell {
+    display: grid;
+    grid-template-columns: 420px 480px;
+    min-height: 560px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+}
+
+/* ─────────────────────────────────────────
+   LEFT PANEL
+───────────────────────────────────────── */
+.left-panel {
+    background: var(--color-panel-dark);
+    display: flex;
+    flex-direction: column;
+    padding: 40px 36px;
+    position: relative;
+    overflow: hidden;
+}
+
+.left-panel::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: rgba(245, 197, 24, 0.06);
+}
+
+.left-panel::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(192, 34, 42, 0.08);
+}
+
+/* Brand row */
+.brand-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.brand-logo {
+    width: 44px; height: 44px;
+    background: #555;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--color-yellow);
+    flex-shrink: 0;
+    letter-spacing: 0.5px;
+    border: 1px solid #666;
+}
+
+.brand-logo img {
+    width: 36px; height: 36px;
+    object-fit: contain;
+}
+
+.brand-txt .b-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-yellow);
+    line-height: 1.3;
+}
+
+.brand-txt .b-sub {
+    font-size: 9px;
+    color: var(--color-text-faint);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+/* Hero */
+.hero-title {
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--color-text-light);
+    line-height: 1.25;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.hero-title span { color: var(--color-yellow); }
+
+.hero-desc {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: 36px;
+}
+
+/* Feature list */
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: auto;
+}
+
+.feat { display: flex; align-items: flex-start; gap: 12px; }
+
+.feat-icon {
+    width: 32px; height: 32px;
+    background: rgba(245, 197, 24, 0.12);
+    border: 1px solid rgba(245, 197, 24, 0.25);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.feat-icon svg {
+    width: 15px; height: 15px;
+    stroke: var(--color-yellow);
+    fill: none;
+    stroke-width: 1.6;
+}
+
+.feat-text .ft-title { font-size: 12px; font-weight: 600; color: #ccc; }
+.feat-text .ft-desc  { font-size: 11px; color: var(--color-text-faint); margin-top: 1px; }
+
+/* Left footer */
+.left-footer {
+    margin-top: 36px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 10px;
+    color: #555;
+}
+
+.left-footer a { color: #777; text-decoration: none; }
+
+/* ─────────────────────────────────────────
+   RIGHT PANEL
+───────────────────────────────────────── */
+.right-panel {
+    background: var(--color-surface);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px 44px;
+}
+
+/* Page titles */
+.login-title, .reg-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--color-text-primary);
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.login-sub, .reg-sub {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 32px;
+}
+
+/* ── Form fields ── */
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.f-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--color-text-faint);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.f-input {
+    background: #fff;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-sm);
+    padding: 10px 12px;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    color: var(--color-text-primary);
+    outline: none;
+    width: 100%;
+}
+
+.f-input:focus      { border-color: var(--color-yellow); background: #fff; }
+.f-input::placeholder { color: #bbb; }
+.f-input.is-invalid { border-color: var(--color-red); background: #fff8f8; }
+
+/* Password with eye toggle */
+.input-wrapper { position: relative; display: flex; align-items: center; }
+.input-wrapper .f-input { padding-right: 45px; }
+
+.eye-toggle {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #999;
+    display: flex;
+    align-items: center;
+}
+
+.eye-toggle:hover { color: var(--color-yellow); }
+.eye-icon { width: 18px; height: 18px; }
+
+/* ── Primary button ── */
+.btn-primary {
+    width: 100%;
+    background: var(--color-yellow);
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 12px;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 700;
+    color: #0d0d0d;
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    position: relative;
+    margin-top: 6px;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: var(--color-red);
+    border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+
+.btn-primary:hover { background: var(--color-yellow-hover); }
+
+/* ── Alerts ── */
+.error-alert {
+    font-size: 10px;
+    color: var(--color-error-text);
+    background-color: var(--color-error-bg);
+    border: 1px solid var(--color-error-border);
+    padding: 10px;
+    border-radius: var(--radius-sm);
+    margin-top: 5px;
+}
+
+.alert-success {
+    font-size: 11px;
+    color: var(--color-success-text);
+    background-color: var(--color-success-bg);
+    border: 1px solid var(--color-success-border);
+    padding: 10px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 20px;
+}
+
+.error-list { margin: 0; list-style-type: none; padding: 0; }
+
+.error-text {
+    font-size: 10px;
+    color: var(--color-red);
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+/* ── Bottom link row ── */
+.auth-link-row {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+}
+
+.auth-link-row a { color: #0F4C9E; font-weight: 600; text-decoration: none; }
+.auth-link-row a:hover { text-decoration: underline; }
+
+/* ── Right footer ── */
+.right-footer {
+    margin-top: 28px;
+    font-size: 10px;
+    color: #bbb;
+    text-align: center;
+}

@@ -1,0 +1,183 @@
+/* ============================================================
+   welcome.css — Styles unique to the login page (welcome.blade.php)
+   Requires: auth.css
+   ============================================================ */
+
+/* ── SSO block ── */
+.sso-block {
+  background: #fff;
+  border: 1px solid #e0dfd8;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.sso-label {
+  font-size: 9px;
+  font-weight: 600;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+.sso-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  background: #fff;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  padding: 11px 16px;
+  cursor: pointer;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  transition: border-color 0.15s, background 0.15s;
+  text-align: left;
+}
+
+.sso-btn:hover {
+  border-color: #F5C518;
+  background: #fffdf0;
+}
+
+.sso-btn+.sso-btn {
+  margin-top: 8px;
+}
+
+.sso-btn-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sso-btn-icon.blue {
+  background: #0F4C9E;
+}
+
+.sso-btn-icon.red {
+  background: #C0392B;
+}
+
+.sso-btn-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: #fff;
+  fill: none;
+  stroke-width: 1.6;
+}
+
+.sso-chevron svg {
+  width: 14px;
+  height: 14px;
+  stroke: #bbb;
+  fill: none;
+  stroke-width: 1.5;
+  margin-left: auto;
+}
+
+/* ── Divider ── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e0dfd8;
+}
+
+.divider span {
+  font-size: 10px;
+  color: #bbb;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Password row (forgot link inline with label) ── */
+.password-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.forgot-link {
+  font-size: 11px;
+  color: #999;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  color: #555;
+}
+
+/* ── OTP hint banner ── */
+.otp-hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff0f0;
+  border: 1px solid #f5c1c1;
+  border-radius: 5px;
+  padding: 9px 12px;
+  margin-top: 14px;
+}
+
+.otp-dot {
+  width: 6px;
+  height: 6px;
+  background: #C0392B;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.otp-text {
+  font-size: 11px;
+  color: #8a2020;
+  line-height: 1.5;
+}
+
+/* Alias btn-login → btn-primary (keep old class working) */
+.btn-login {
+  width: 100%;
+  background: #F5C518;
+  border: none;
+  border-radius: 4px;
+  padding: 12px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0d0d0d;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  position: relative;
+  margin-top: 6px;
+}
+
+.btn-login::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #C0392B;
+  border-radius: 4px 0 0 4px;
+}
+
+.btn-login:hover {
+  background: #ffd22e;
+}

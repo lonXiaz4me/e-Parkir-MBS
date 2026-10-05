@@ -1,0 +1,136 @@
+/* Profile specific UI adaptations maintaining payment.css tokens */
+    .profile-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 6px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 10px 14px;
+      font-size: 0.95rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      background-color: #fff;
+      color: #1e293b;
+      transition: border-color 0.15s ease;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: #185FA5;
+      box-shadow: 0 0 0 3px rgba(24, 95, 165, 0.1);
+    }
+    .form-control:disabled {
+      background-color: #f8fafc;
+      color: #64748b;
+      cursor: not-allowed;
+    }
+    .input-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .error-msg {
+      color: #C0392B;
+      font-size: 0.8rem;
+      margin-top: 4px;
+    }
+    @media (max-width: 768px) {
+      .input-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── Password field with eye toggle (same pattern as login/register pages) ── */
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .input-wrapper .form-control {
+      padding-right: 45px;
+    }
+    .eye-toggle {
+      position: absolute;
+      right: 12px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      padding: 0;
+    }
+    .eye-toggle:hover {
+      color: #185FA5;
+    }
+    .eye-icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* ── Password strength meter & badges (same pattern as register page) ── */
+    .strength-container {
+      margin-top: 10px;
+    }
+    .strength-meter {
+      height: 3px;
+      background: #e0dfd8;
+      border-radius: 2px;
+      margin-top: 6px;
+      overflow: hidden;
+    }
+    #meter-bar {
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s, background 0.3s;
+    }
+    #meter-bar.weak {
+      background: #e74c3c;
+      width: 25%;
+    }
+    #meter-bar.medium {
+      background: #f1c40f;
+      width: 50%;
+    }
+    #meter-bar.strong {
+      background: #2ecc71;
+      width: 100%;
+    }
+    .badge-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .badge {
+      font-size: 9px;
+      padding: 2px 8px;
+      background: #e0dfd8;
+      color: #888;
+      border-radius: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+    }
+    .badge.valid {
+      background: rgba(39, 174, 96, 0.1);
+      color: #27ae60;
+      border-color: rgba(39, 174, 96, 0.3);
+    }
+
+    /* ── Password match feedback (same pattern as register page) ── */
+    #match-text {
+      display: none;
+    }

@@ -1,0 +1,568 @@
+/* ============================================================
+   tokens.css — Brand design tokens for MBS e-Parkir
+   Load this FIRST on every page, before any other stylesheet.
+   ============================================================ */
+
+:root {
+    /* ── Brand colours ── */
+    --color-yellow: #F5C518;
+    --color-yellow-hover: #ffd22e;
+    --color-red: #C0392B;
+    --color-red-dark: #c0222a;
+    --color-blue-link: #0F4C9E;
+    --color-blue-info: #185FA5;
+
+    /* ── Backgrounds ── */
+    --color-dark-bg: #1a1a1a;
+    --color-panel-dark: #444;
+    --color-panel-mid: #333;
+    --color-surface: #f4f3f0;
+    /* auth pages */
+    --color-surface-warm: #f5f0e8;
+    /* dashboard main area */
+    --color-surface-card: #fafaf8;
+    /* panel/card headers */
+
+    /* ── Borders ── */
+    --color-border-dark: #2a2a2a;
+    --color-border-light: #e0dfd8;
+    --color-border-panel: #f0ede6;
+    /* inner panel dividers */
+    --color-border-ui: #ddd;
+
+    /* ── Text ── */
+    --color-text-primary: #111;
+    --color-text-muted: #888;
+    --color-text-faint: #666;
+    --color-text-light: #fff;
+    --color-text-yellow: #F5C518;
+    --color-text-dim: #aaa;
+    --color-text-pale: #bbb;
+
+    /* ── Feedback ── */
+    --color-error-text: #721c24;
+    --color-error-bg: #fff0f0;
+    --color-error-border: #f5c1c1;
+    --color-success-text: #155724;
+    --color-success-bg: #d4edda;
+    --color-success-border: #c3e6cb;
+
+    /* ── Status colours ── */
+    --color-status-pending-bar: #e6a800;
+    --color-status-approved-bar: #3B6D11;
+    --color-status-complete-bar: #007bff;
+    --color-status-rejected-bar: #c0222a;
+
+    /* ── Typography ── */
+    --font-ui: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+    --font-display: 'DM Serif Display', serif;
+
+    /* ── Radius ── */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 12px;
+    --radius-xl: 8px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+/* ============================================================
+   GLOBAL DARK THEME OVERRIDES (active when html has class theme-dark)
+   ============================================================ */
+html.theme-dark {
+    /* Background overrides */
+    --color-surface: #131313;
+    --color-surface-warm: #1a1a1a;
+    --color-surface-card: #222222;
+
+    /* Border overrides */
+    --color-border-light: #2c2c2c;
+    --color-border-panel: #2c2c2c;
+    --color-border-ui: #2c2c2c;
+
+    /* Text overrides */
+    --color-text-primary: #e0e0e0;
+    --color-text-muted: #888;
+    --color-text-faint: #aaa;
+    --color-text-dim: #888;
+    --color-text-pale: #555;
+    --color-dark-bg: #131313;
+
+    /* Feedback overrides */
+    --color-error-text: #f5c1c1;
+    --color-error-bg: #2c1a1a;
+    --color-error-border: #5c2c2c;
+    --color-success-text: #c3e6cb;
+    --color-success-bg: #1a2e1e;
+    --color-success-border: #2d5a37;
+}
+
+/* Base element overrides */
+html.theme-dark body {
+    background: var(--color-surface);
+    color: var(--color-text-primary);
+}
+
+html.theme-dark .main {
+    background: var(--color-surface-warm);
+}
+
+html.theme-dark .shell {
+    background: var(--color-surface);
+}
+
+/* Stat & Content Cards */
+html.theme-dark .stat,
+html.theme-dark .stat-mini,
+html.theme-dark .past-card,
+html.theme-dark .app-card,
+html.theme-dark .detail-panel,
+html.theme-dark .summary-panel,
+html.theme-dark .form-card,
+html.theme-dark .profile-card,
+html.theme-dark .lang-card,
+html.theme-dark .theme-card,
+html.theme-dark .bil-featured {
+    background: var(--color-surface-card) !important;
+    border-color: var(--color-border-ui) !important;
+    color: var(--color-text-primary) !important;
+}
+
+/* Global typography color shifts */
+html.theme-dark .page-title,
+html.theme-dark .page-sub,
+html.theme-dark .app-type,
+html.theme-dark .stat-num,
+html.theme-dark .tl-stage,
+html.theme-dark .info-val,
+html.theme-dark .past-type,
+html.theme-dark .invoice-lbl,
+html.theme-dark .sp-val,
+html.theme-dark .sp-total-key,
+html.theme-dark .sp-total-val,
+html.theme-dark .sm-num,
+html.theme-dark .notif-text .nt,
+html.theme-dark .notif-title,
+html.theme-dark .setting-label,
+html.theme-dark .form-card-title,
+html.theme-dark .f-label,
+html.theme-dark .decl-text,
+html.theme-dark .br-row .br-val,
+html.theme-dark .br-row.total {
+    color: var(--color-text-primary) !important;
+}
+
+html.theme-dark .breadcrumb .current,
+html.theme-dark .ps.cur {
+    color: var(--color-text-primary) !important;
+}
+
+/* Inputs & Buttons */
+html.theme-dark .search-wrap,
+html.theme-dark .search-wrap input,
+html.theme-dark .filter-btn,
+html.theme-dark .sort-wrap,
+html.theme-dark .bank-selector,
+html.theme-dark .f-input {
+    background: var(--color-surface-warm) !important;
+    border-color: var(--color-border-ui) !important;
+    color: var(--color-text-primary) !important;
+}
+
+html.theme-dark .search-wrap input::placeholder {
+    color: var(--color-text-pale) !important;
+}
+
+html.theme-dark .filter-btn:not(.active),
+html.theme-dark .sort-btn:not(.active),
+html.theme-dark .btn-resit {
+    background: var(--color-surface-card) !important;
+    border-color: var(--color-border-ui) !important;
+    color: var(--color-text-muted) !important;
+}
+
+html.theme-dark .filter-btn.active,
+html.theme-dark .sort-btn.active {
+    background: var(--color-yellow) !important;
+    color: #0d0d0d !important;
+    border-color: var(--color-yellow) !important;
+}
+
+html.theme-dark input:disabled,
+html.theme-dark select:disabled,
+html.theme-dark textarea:disabled {
+    background: #1b1b1b !important;
+    border-color: #2b2b2b !important;
+    color: #777 !important;
+}
+
+/* Alerts & Notifications */
+html.theme-dark .alert-strip,
+html.theme-dark .info-strip,
+html.theme-dark .tl-note,
+html.theme-dark .payment-note,
+html.theme-dark .notif-item-pay,
+html.theme-dark .secure-note,
+html.theme-dark .draft-banner {
+    background: #2a2615 !important;
+    border-color: #554410 !important;
+    color: #ffd859 !important;
+}
+
+html.theme-dark .alert-text,
+html.theme-dark .info-text,
+html.theme-dark .tl-note,
+html.theme-dark .draft-banner-text {
+    color: #ffd859 !important;
+}
+
+html.theme-dark .info-strip--amber {
+    background: #2b1f13 !important;
+    border-color: #5a3c1a !important;
+    color: #ffa84c !important;
+}
+
+html.theme-dark .info-text--amber {
+    color: #ffa84c !important;
+}
+
+/* Sliding Notification Panel & Bell */
+html.theme-dark .notif-panel {
+    background: var(--color-surface-card) !important;
+    border-color: var(--color-border-ui) !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.40) !important;
+}
+
+html.theme-dark .bell-btn,
+html.theme-dark .dp-close-btn {
+    background: var(--color-surface-card) !important;
+    border-color: var(--color-border-ui) !important;
+    color: var(--color-text-primary) !important;
+}
+
+html.theme-dark .bell-btn svg,
+html.theme-dark .dp-close-btn svg {
+    stroke: var(--color-text-primary) !important;
+}
+
+html.theme-dark .np-tabs {
+    background: var(--color-surface-warm) !important;
+}
+
+html.theme-dark .np-tab.active {
+    color: var(--color-yellow) !important;
+}
+
+html.theme-dark .np-footer {
+    background: var(--color-surface-warm) !important;
+    border-top-color: var(--color-border-panel) !important;
+}
+
+html.theme-dark .notif-item {
+    border-bottom-color: var(--color-border-panel) !important;
+}
+
+html.theme-dark .notif-item:hover {
+    background: var(--color-surface-warm) !important;
+}
+
+html.theme-dark .notif-item.unread {
+    background: #2b271a !important;
+}
+
+html.theme-dark .notif-item.unread:hover {
+    background: #342e1d !important;
+}
+
+html.theme-dark .notif-msg {
+    color: var(--color-text-muted) !important;
+}
+
+html.theme-dark .np-empty p {
+    color: var(--color-text-pale) !important;
+}
+
+/* Timeline connections */
+html.theme-dark .tl-item::before {
+    background: var(--color-border-ui) !important;
+}
+
+html.theme-dark .tl-dot.active,
+html.theme-dark .tl-dot.pending,
+html.theme-dark .tl-dot.fail,
+html.theme-dark .tl-dot.check_outline {
+    background: var(--color-surface-card) !important;
+}
+
+html.theme-dark .ck {
+    background: var(--color-surface-warm) !important;
+}
+
+/* Payment breakdowns & methods */
+html.theme-dark .bil-header {
+    background: var(--color-surface-warm) !important;
+}
+
+html.theme-dark .br-row {
+    color: var(--color-text-muted) !important;
+}
+
+html.theme-dark .br-row.total {
+    border-top-color: var(--color-border-ui) !important;
+}
+
+html.theme-dark .method-card {
+    background: var(--color-surface-card) !important;
+    border-color: var(--color-border-ui) !important;
+}
+
+html.theme-dark .method-card:hover {
+    border-color: var(--color-yellow) !important;
+    background: #2b281d !important;
+}
+
+html.theme-dark .method-card.selected {
+    border-color: var(--color-yellow) !important;
+    background: #2f2d1a !important;
+}
+
+html.theme-dark .method-card.selected .method-name {
+    color: var(--color-yellow) !important;
+}
+
+html.theme-dark .method-name {
+    color: var(--color-text-primary) !important;
+}
+
+/* File uploading drag zones */
+html.theme-dark .upload-tab {
+    background: var(--color-surface-card) !important;
+    border-color: var(--color-border-ui) !important;
+    color: var(--color-text-muted) !important;
+}
+
+html.theme-dark .upload-tab.active {
+    background: var(--color-surface-warm) !important;
+    color: var(--color-text-primary) !important;
+}
+
+html.theme-dark .upload-file-drop {
+    background: var(--color-surface-card) !important;
+    border-color: var(--color-border-ui) !important;
+}
+
+html.theme-dark .upload-file-drop:hover {
+    border-color: var(--color-yellow) !important;
+}
+
+html.theme-dark .upload-preview {
+    border-color: var(--color-border-ui) !important;
+    background: var(--color-surface-card) !important;
+}
+
+/* Language and Settings options */
+html.theme-dark .lang-card,
+html.theme-dark .theme-card {
+    background: var(--color-surface-card) !important;
+    border-color: var(--color-border-ui) !important;
+}
+
+html.theme-dark .lang-card:hover,
+html.theme-dark .theme-card:hover {
+    border-color: var(--color-yellow) !important;
+    background: #2b281d !important;
+}
+
+html.theme-dark .lang-card.selected,
+html.theme-dark .theme-card.selected {
+    background: #2f2d1a !important;
+    border-color: var(--color-yellow) !important;
+}
+
+html.theme-dark .lang-card.selected .lang-card-name,
+html.theme-dark .theme-card.selected .theme-card-name {
+    color: var(--color-yellow) !important;
+}
+
+html.theme-dark .lang-card-name,
+html.theme-dark .theme-card-name {
+    color: var(--color-text-primary) !important;
+}
+
+html.theme-dark .setting-row {
+    border-bottom-color: var(--color-border-panel) !important;
+}
+
+html.theme-dark .toggle-track {
+    background: #444 !important;
+}
+
+html.theme-dark .section-label,
+html.theme-dark .dp-section-label {
+    color: var(--color-text-muted) !important;
+    border-bottom-color: var(--color-border-panel) !important;
+}
+
+/* Desktop sidebar & Header elements */
+html.theme-dark .sidebar {
+    background: #111 !important;
+    border-right-color: #222 !important;
+}
+
+html.theme-dark .brand {
+    border-bottom-color: #222 !important;
+}
+
+html.theme-dark .sb-footer {
+    border-top-color: #222 !important;
+}
+
+html.theme-dark .mobile-header {
+    background: #111 !important;
+    border-bottom-color: #222 !important;
+}
+
+html.theme-dark .mobile-bottom-nav {
+    background: #111 !important;
+    border-top-color: #222 !important;
+}
+
+html.theme-dark .mob-nav-item {
+    color: var(--color-text-muted) !important;
+}
+
+html.theme-dark .mob-nav-item.active {
+    color: var(--color-yellow) !important;
+}
+
+/* ── Step Bar & Progress Overrides ── */
+html.theme-dark .step-bar {
+    background: var(--color-surface-card) !important;
+    border-color: var(--color-border-ui) !important;
+}
+
+html.theme-dark .step:not(:last-child)::after {
+    background: var(--color-border-ui) !important;
+}
+
+html.theme-dark .step-num.todo {
+    background: var(--color-surface-warm) !important;
+    color: var(--color-text-muted) !important;
+    border: 1px solid var(--color-border-ui) !important;
+}
+
+html.theme-dark .step-num.current {
+    background: var(--color-yellow) !important;
+    color: #0d0d0d !important;
+    border-color: var(--color-yellow) !important;
+}
+
+html.theme-dark .step-label {
+    color: var(--color-text-muted) !important;
+}
+
+html.theme-dark .step-label.current {
+    color: var(--color-yellow) !important;
+    font-weight: 600 !important;
+}
+
+/* ── Declaration Box Overrides ── */
+html.theme-dark .declaration-box {
+    background: #2a2615 !important;
+    border-color: #554410 !important;
+}
+
+html.theme-dark .decl-text {
+    color: #ffd859 !important;
+}
+
+html.theme-dark #custom-check {
+    border-color: #ffd859 !important;
+}
+
+/* ── Action Bar & Buttons Overrides ── */
+html.theme-dark .action-bar {
+    background: var(--color-surface-card) !important;
+    border-top-color: var(--color-border-ui) !important;
+}
+
+html.theme-dark .btn-ghost {
+    background: transparent !important;
+    border-color: var(--color-border-ui) !important;
+    color: var(--color-text-primary) !important;
+}
+
+html.theme-dark .btn-ghost:hover {
+    background: var(--color-surface-warm) !important;
+}
+
+html.theme-dark .btn-draft {
+    background: var(--color-surface-card) !important;
+    border-color: #ffd859 !important;
+    color: #ffd859 !important;
+}
+
+html.theme-dark .btn-draft:hover {
+    background: #2a2615 !important;
+    border-color: #ffd859 !important;
+}
+
+html.theme-dark .btn-draft.saved {
+    background: #1a2e1e !important;
+    border-color: #2ecc71 !important;
+    color: #2ecc71 !important;
+}
+
+html.theme-dark .btn-submit {
+    color: #0d0d0d !important;
+}
+
+/* ── Profile Page & Form Control Overrides ── */
+html.theme-dark .form-control {
+    background-color: var(--color-surface-warm) !important;
+    border-color: var(--color-border-ui) !important;
+    color: var(--color-text-primary) !important;
+}
+
+html.theme-dark .form-control:focus {
+    border-color: var(--color-yellow) !important;
+    box-shadow: 0 0 0 3px rgba(245, 197, 24, 0.15) !important;
+}
+
+html.theme-dark .form-control:disabled {
+    background-color: #1b1b1b !important;
+    border-color: #2b2b2b !important;
+    color: #777 !important;
+}
+
+html.theme-dark .form-group label {
+    color: var(--color-text-primary) !important;
+}
+
+html.theme-dark .form-group small {
+    color: var(--color-text-muted) !important;
+}
+
+html.theme-dark .eye-toggle {
+    color: var(--color-text-muted) !important;
+}
+
+html.theme-dark .eye-toggle:hover {
+    color: var(--color-yellow) !important;
+}
+
+html.theme-dark .badge {
+    background-color: var(--color-surface-warm) !important;
+    color: var(--color-text-muted) !important;
+    border-color: var(--color-border-ui) !important;
+}
+
+html.theme-dark .badge.valid {
+    background-color: rgba(39, 174, 96, 0.15) !important;
+    color: #2ecc71 !important;
+    border-color: rgba(39, 174, 96, 0.3) !important;
+}
