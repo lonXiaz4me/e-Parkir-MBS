@@ -6,7 +6,7 @@ RUN mkdir -p public/build && \
     if [ -f package.json ]; then npm ci && npm run build; fi
 
 # ---- Stage 2: PHP + Apache ----
-FROM php:8.3-apache
+FROM php:8.4-apache
 
 RUN apt-get update && apt-get install -y \
         git unzip libzip-dev libpng-dev libjpeg-dev libfreetype6-dev libonig-dev libxml2-dev \
